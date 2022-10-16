@@ -3,7 +3,7 @@ ENV GOPROXY https://goproxy.cn,direct
 ENV GO111MODULE on
 WORKDIR /app
 COPY . .
-RUN mkdir publish && cp ./test publish
+RUN mkdir publish && cp . publish
 
 COPY --from=build /app/publish .
 ENTRYPOINT ["./api"]
